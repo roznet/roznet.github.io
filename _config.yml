@@ -23,7 +23,7 @@ author: Luc Rosenzweig
 
 # Build settings
 markdown: kramdown
-theme: minima 
+theme: jekyll-theme-midnight 
 #theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
