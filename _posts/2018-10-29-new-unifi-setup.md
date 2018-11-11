@@ -11,8 +11,22 @@ As I learned more and more about networking to fix the problem, I had build a co
 
 It was old build with older netgear hardware, and was working ok, but I decided to try to upgrade my setup using a Unifi setup. While the setup was quite smooth, I had two issues to still sort out:
 
-- ipv6 was not working out of the box. I figured out how to fix after comparing the configuration of the edgerouter I have previously. I still need to make sure I build and test a proper config.gateway.json file to ensure the fix persits through reboot of the gateway.
-- my ntopng monitoring computer does not work anymore because the port mirroring does not work the same way as the old netgear hardware. Still working on this one.
+- ipv6 was not working out of the box. 
+- my ntopng monitoring computer does not work anymore because the port mirroring does not work the same way as the old netgear hardware.
+
+## Fixing ipv6
+
+I figured out how to fix after comparing the configuration of the edgerouter I have previously. I still need to make sure I build and test a proper config.gateway.json file to ensure the fix persits through reboot of the gateway.
+
+{% highlight bash %}
+set interfaces ethernet eth2 pppoe 0 default-route auto
+set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 host-address ::1
+set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 service slaac   
+commit
+{% endhighlight %}
+
+## Fixing ntopng
+
 
 
 
