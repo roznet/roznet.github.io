@@ -3,6 +3,7 @@ layout: post
 title:  "Upgrading my home network to Unifi"
 date:   2018-10-28 09:57:13 +0100
 categories: network
+comments: true
 ---
 
 I have been increasing the sophistication of my home network over the year. It all started when my network was not intermittently not working, internet connection regularly dropping for minutes at a time and driving my whole family nuts, but this is a story for another time and it's not fixed.
