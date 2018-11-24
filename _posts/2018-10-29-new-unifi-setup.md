@@ -66,7 +66,7 @@ After running these, ipv6 started working on all the devices. Of course this wil
     }
   },	
 }
-{ endhighlight %}
+{% endhighlight %}
 
 ## Fixing ntopng
 
