@@ -34,13 +34,39 @@ Because it was all working on my previous edgerouter lite, I decided to compare 
 
 {% highlight bash %}
 configure
-set interfaces ethernet eth2 pppoe 0 default-route auto
 set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 host-address ::1
 set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 service slaac   
 commit
 {% endhighlight %}
 
-After running these, ipv6 started working on all the devices. Of course this will be lost at the next provision, but all that is needed is to add these to the config.gateway.json on the controller...
+After running these, ipv6 started working on all the devices. Of course this will be lost at the next provision, but all that is needed is to add these to the config.gateway.json on the controller, with the following :
+
+{% highlight bash %}
+{
+  "interfaces" : {
+    "ethernet" : {
+      "eth2" : {
+        "pppoe" : {
+          "0" : {
+            "dhcpv6-pd" : {
+              "pd" : {
+                "0" : {
+                  "interface" : {
+                    "eth0" : {
+                      "host-address" : "::1",
+                      "service" : "slaac"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },	
+}
+{ endhighlight %}
 
 ## Fixing ntopng
 
