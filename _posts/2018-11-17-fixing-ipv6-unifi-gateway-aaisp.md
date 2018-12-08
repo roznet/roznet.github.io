@@ -6,6 +6,8 @@ categories: network
 comments: true
 ---
 
+My new unifi setup worked great, but somehow I was unable to get IPV6 working. I had an edgerouter before, so I knew the system should be compatible with my ISP.
+
 ## Fixing ipv6
 
 I had setup ipv6 on the controller by setting the default configuration for the wan and the lan as:
@@ -24,7 +26,7 @@ set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 service slaac
 commit
 {% endhighlight %}
 
-After running these, ipv6 started working on all the devices. Of course this will be lost at the next provision, but all that is needed is to add these to the config.gateway.json on the controller, with the following :
+After running these, ipv6 started working on all the devices. Of course this will be lost at the next provision, but all that was then needed is to add these to the config.gateway.json on the controller, with the following :
 
 {% highlight bash %}
 {
