@@ -49,7 +49,7 @@ user:imac$ ./lancheck.py show -dstatic_host_mapping
 Of course, an important step is to make sure the relevant host have a fix IP. To achieve that, I mixed two methods: 
 
 1. on some device I configured the system to not use dhcp but a static IP within the reservation I defined in the router config (from the unifi controller, in the network config page:
-![Network Config](/assets/networkconfig.png)
+<img src="/assets/networkconfig.png" width="75%"  />
 
 2. Configuring a fixed IP from the unifi controller user interface, in the network pane of the config pane, as below:
 
@@ -89,6 +89,7 @@ save
 This resulted in the device only getting the Unifi Gateway as a dns server and no longer the ISP dns server. The local host are now found by name on all my devices...
 
 The one missing piece is that I could not figure out how to set that no-dns setting on the config.gateway.json, trying to extract the config by using `mca-` showed not value related to no-dns in the file, while it's clearly there on the `configure` output as show below.
+
 
 So it works, but on reboot of the unifi gateway, it is necessary to re-issue the configure command at the moment...
 

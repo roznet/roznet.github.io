@@ -12,8 +12,8 @@ My new unifi setup worked great, but somehow I was unable to get IPV6 working. I
 
 I had setup ipv6 on the controller by setting the default configuration for the wan and the lan as:
 
-![wan](/assets/unifi_wan_setup.png)
-![lan](/assets/unifi_lan_setup.png)
+<img src="/assets/unifi_wan_setup.png" width="75%" />
+<img src="/assets/unifi_lan_setup.png" width="75%" />
 
 Unfortunately, my devices refused to connect via ipv6 and [ipv6-test.com](http://ipv6-test.com/) was reporting all failed.
 
