@@ -33,7 +33,7 @@ I installed the current latest version 5.9.29 of the [unifi controller](https://
 All the basics worked pretty much out of the box. Though I had a few issues to revolve, which I'll write about in future posts.
 
 1. [IPV6 setup]({{ site.baseurl }}{% post_url 2018-11-17-fixing-ipv6-unifi-gateway-aaisp %})
-2. [ntopng setup]({{ site.baseurl }}{% post_url 2018-11-fixing-ntopng-for-unifi-gateway %})
+2. [ntopng setup]({{ site.baseurl }}{% post_url 2018-11-06-fixing-ntopng-for-unifi-gateway %})
 3. [DNS server for local devices]({{ site.baseurl }}{% post_url 2018-12-08-ipv6-dns-local-hosts %})
 
 
