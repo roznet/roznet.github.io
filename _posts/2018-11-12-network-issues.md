@@ -2,6 +2,7 @@
 layout: post
 title: "Troubleshooting network issues"
 date: 2018-11-12 11:38:00 +0100
+category: network
 ---
 One of the requirement for me in finding a new house was to make sure it had ethernet cabling everywhere so I could ensure I have a stable network and enough access point to get good wifi connectivity in every room.
 
