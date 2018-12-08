@@ -6,7 +6,7 @@ categories: network
 comments: true
 ---
 
-One of the challenges of my network setup was to ensure that I could access the different services I am running on different services via hostname. For that I needed to make sure that the DNS forwarded on my Unifi USG Gateway was properly setup and with the list of host names. These involved several steps to get everything right
+One of the challenges of [my network setup]({{ site.baseurl }}{% post_url 2018-10-29-new-unifi-setup %}) was to ensure that I could access the different services I am running on different devices via hostname. For instance so I can use `https://unifi.localweb:8443` for the Unifi Controller or `https://ntopng.localweb:4000` for my [ntopng instance]({{ site.baseurl }}{% post_url 2018-11-06-fixing-ntopng-for-unifi-gateway %}). For that I needed to make sure that the DNS forwarded on my Unifi USG Gateway was properly setup and with the list of host names. These involved several steps to get everything right
 
 ## Getting the list of hosts and IP in the Unifi Gateway
 

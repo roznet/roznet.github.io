@@ -4,12 +4,11 @@ title: "Setting up ntopng with Unifi USG Gateway"
 date: 2018-11-29 11:38:00 +0100
 ---
 
-After upgrading to the Unifi system, I could use the Unifi Controller to see activity on the network, but the current version only display activity level with very few details by hosts. I gotten used to ntopng and its details both of what is happening at a given moment and ability to look back historically. Very useful for troubleshooting or investigating unexpected behavior. The Unifi Controller while providing great high level insight, still fell short of this ability, so I decided to re-enable by ntopng setup.
-
+After [upgrading my home network]({{ site.baseurl }}{% post_url 2018-10-29-new-unifi-setup %}) to a Unifi system, I could use the Unifi Controller to see activity on the network, but the current version only display activity level with very few details by hosts. I gotten used to [ntopng](https://www.ntop.org/products/traffic-analysis/ntop/) and its details both of what is happening at a given moment and ability to look back historically. Very useful for troubleshooting or investigating unexpected behavior. The Unifi Controller while providing great high level insight, still fell short of this ability, so I decided to re-enable by ntopng setup.
 
 ## Device setup
 
-I setup ntopng on a NUC device where I installed ubuntu 18.04. Ubuntu comes with ntopng as a standard packages in their apt repo, so I just used that to install with `sudo apt-get install ntopng`. Easy enough.
+I setup ntopng on a [NUC device](https://www.intel.com/content/www/us/en/products/boards-kits/nuc.html) where I installed [ubuntu 18.04](https://www.ubuntu.com/). Ubuntu comes with ntopng as a standard packages in their apt repo, so I just used that to install with `sudo apt-get install ntopng`. Easy enough.
 
 The NUC is connected via its ethernet port to the main Unifi Switch, the idea was to setup this port as a mirror to the port going from the Unifi Switch ot the  Gateway, so that all the traffic to the internet is mirrored and monitored.
 
