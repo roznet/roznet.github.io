@@ -42,6 +42,7 @@ exclude:
   - "*#"
   - Gemfile
   - Gemfile.lock
+  - _bld
 #   - node_modules
 #   - vendor/bundle/
 #   - vendor/cache/
