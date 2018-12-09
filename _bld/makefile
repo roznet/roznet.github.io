@@ -6,5 +6,8 @@ IMG_FILES=$(patsubst $(POST_DIR)/%,$(IMG_DIR)/%,$(POST_FILES:.md=.png))
 
 all: $(IMG_FILES)
 
+clean:
+	rm $(IMG_FILES)
+
 $(IMG_DIR)/%.png: $(POST_DIR)/%.md
 	./gencloud.py -o $(IMG_DIR) $<
