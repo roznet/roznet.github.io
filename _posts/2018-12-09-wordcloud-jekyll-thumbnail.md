@@ -14,6 +14,16 @@ My first instinct was to see if there was a python package to build wordcloud. I
 
 A quick web search later and of course, there is a very nice and easy to [use package](http://amueller.github.io/word_cloud/) already. Install into my anaconda setup was trivial with `conda install -c conda-forge wordcloud`.
 
+Then generation of the picture is trivial and take one line:
+
+```python
+wordcloud = WordCloud(max_words=30,background_color=(21,21,21)).generate(text)
+```
+
+to generate the below for this post:
+
+<img src="/assets/clouds/2018-12-09-wordcloud-jekyll-thumbnail.png" />
+
 It was then trivial to loop through the posts files and generate a corresponding word cloud image for each
 
 ```python
