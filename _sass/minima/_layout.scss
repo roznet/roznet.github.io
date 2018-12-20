@@ -201,6 +201,15 @@
       margin: 0 15px 0 0;
   }
 }
+.post-list-tight {
+  margin-left: 0;
+  list-style: none;
+
+  > li {
+    margin-bottom: 20px;
+  }
+
+}
 
 .post-meta {
   font-size: $small-font-size;
@@ -209,6 +218,10 @@
 
 .post-link {
   display: block;
+  @include relative-font-size(1.2);
+}
+
+.post-link-inline {
   @include relative-font-size(1.2);
 }
 
