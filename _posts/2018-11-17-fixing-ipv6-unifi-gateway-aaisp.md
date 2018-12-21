@@ -17,10 +17,27 @@ I had setup ipv6 on the controller by setting the default configuration for the 
 
 Unfortunately, my devices refused to connect via ipv6 and [ipv6-test.com](http://ipv6-test.com/) was reporting all failed.
 
-Because it was all working on my previous edgerouter lite, I decided to compare the configuration in details. I extracted the configuration by downloading a backup from the edgerouter and inspecting the `config.boot` file. I compared it with the config.json files [extracted from the usg pro](https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-USG-Advanced-Configuration) via `mca-ctrl -t dump-cfg`. The format being different, yaml vs json, made it a bit painful, but I found the few different in the `interfaces/ethernet/eth2/pppoe/0/` config, which can be tested by running the below on the usg pro directly:
+First, I got the below from the [help forum info](https://community.ubnt.com/t5/UniFi-Routing-Switching-Beta/Welcome-to-UniFi-IPv6/td-p/2145647/page/14)
+
+{% highlight bash %}
+configure 
+
+delete interfaces ethernet eth2 dhcpv6-pd 
+set interfaces ethernet eth2 pppoe 0 dhcpv6-pd prefix-only
+commit
+exit
+
+release dhcpv6-pd interface pppoe0
+delete dhcpv6-pd duid 
+renew dhcpv6-pd interface pppoe0
+{% endhighlight %}
+
+This wasn't enough. Because it was all working on my previous edgerouter lite, I decided to compare the configuration in details. I extracted the configuration by downloading a backup from the edgerouter and inspecting the `config.boot` file. I compared it with the config.json files [extracted from the usg pro](https://help.ubnt.com/hc/en-us/articles/215458888-UniFi-USG-Advanced-Configuration) via `mca-ctrl -t dump-cfg`. The format being different, yaml vs json, made it a bit painful, but I found the few different in the `interfaces/ethernet/eth2/pppoe/0/` config, which can be tested by running the below on the usg pro directly:
+
 
 {% highlight bash %}
 configure
+set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 no-dns
 set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 host-address ::1
 set interfaces ethernet eth2 pppoe 0 dhcpv6-pd pd 0 interface eth0 service slaac   
 commit
