@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Parsing Fit files for Data Science"
+title:  "Efficient Parsing for Fit files"
 date:   2018-12-20 18:02:13 +0100
 categories: "Data"
 comments: true
